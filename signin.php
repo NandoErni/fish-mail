@@ -1,3 +1,6 @@
+<?php
+include "config.php";
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -34,7 +37,7 @@
         <label class="custom-control-label" for="remember-me">Remember me</label>
     </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
+    <p class="mt-5 mb-3 text-muted"><?php echo copyright() ?></p>
 </form>
 </body>
 </html>
