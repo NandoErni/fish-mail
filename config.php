@@ -5,6 +5,13 @@
  * Date: 11.01.2019
  * Time: 13:53
  */
+$db = new SQLite3("data/fish.db");
+
+//creating all sqlite3 tables
+$db->exec("CREATE TABLE IF NOT EXISTS TUser (userName primary key, userPassword, userType);");
+$db->exec("insert into TUser values('zaggi', '".password_hash('85%Xv8=X', PASSWORD_DEFAULT)."', 'admin')");
+$db->exec("insert into TUser values('nando', '".password_hash('r%9M=S%4', PASSWORD_DEFAULT)."', 'admin')");
+
 //setcookie("sig", "value", time()+(86400 * 60)); //86400 = 1 day
 function sendMail($sender, $to, $cc, $subject, $message){
 
