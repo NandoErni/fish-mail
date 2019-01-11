@@ -58,7 +58,14 @@ include "config.php";
 </footer>
 
 <?php
+if(isset($_POST['fishSubmit'])){
+    if(!isset($_POST['inputcc'])){
+        $_POST['inputcc'] = "";
+    }
 
+    //$sender, $to, $cc, $subject, $message
+    sendMail($_POST['inputsender'],$_POST['inputreceiver'],$_POST['inputcc'],$_POST['inputsubject'],$_POST['inputmessage']);
+}
 
 
 ?>

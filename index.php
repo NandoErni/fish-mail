@@ -93,7 +93,7 @@ include "config.php";
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg">Fish</button>
+            <button type="submit" class="btn btn-primary btn-lg" name="fishSubmit">Fish</button>
         </form>
     </div>
 </main>
