@@ -1,3 +1,6 @@
+<?php
+include "config.php";
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Fish-Mail</title>
 
     <!-- Bootstrap 4.2.1 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
