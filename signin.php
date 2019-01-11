@@ -27,10 +27,12 @@ include "config.php";
 
 
     <?php
+
     if(isset($_POST['loginSubmit'])){
         if(login($_POST['inputusername'], $_POST['inputpassword'])){
 
             $_SESSION['userName'] = $_POST['inputusername'];
+            echo $_SESSION['userName'];
             header("Location: index.php"); /* Redirect browser */
             exit();
         } else {

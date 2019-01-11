@@ -5,6 +5,7 @@
  * Date: 11.01.2019
  * Time: 13:53
  */
+session_start();
 $db = new SQLite3("data/fish.db");
 
 //creating all sqlite3 tables
@@ -40,11 +41,10 @@ if(!isset($_SESSION['userName'])){
     $_SESSION['userName'] = "guest";
 }
 
-$_SESSION['userName'] = "guestt";
 
 
 //if user isn't logged in, redirect to login page
-if($_SESSION['userName'] == "guest"){
+if($_SESSION['userName'] == "guest" && basename($_SERVER['PHP_SELF']) != "signin.php"){
     header("Location: signin.php"); /* Redirect browser */
     exit();
 }
@@ -85,7 +85,8 @@ function createUser($userName, $userPassword, $userType, $userNumFish=3){
 
     return true;
 }
-deleteUser('s');
+
+
 function deleteUser($userName){
     global $db, $resUser;
 
