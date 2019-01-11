@@ -5,7 +5,7 @@
  * Date: 11.01.2019
  * Time: 13:53
  */
-//setcookie("sig", "value", time()+(86400 * 30)); //86400 = 1 day
+//setcookie("sig", "value", time()+(86400 * 60)); //86400 = 1 day
 function sendMail($sender, $to, $cc, $subject, $message){
 
     if(isset($_COOKIE['sig'])){
