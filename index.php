@@ -8,11 +8,11 @@ include "config.php";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicon.png">
 
     <title>Fish-Mail</title>
 
-    <!-- Bootstrap 4.2.1 -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
@@ -57,12 +57,58 @@ include "config.php";
 </nav>
 
 <main role="main" class="container">
-
-    <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    <div class="container">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputsender">Sender</label>
+                    <input type="email" class="form-control" id="inputsender" name="inputsender" placeholder="sender@sender.com">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputreceiver">Recipient</label>
+                    <input type="password" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="recipient@recipient.com">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md">
+                    <label for="inputcc">CC</label>
+                    <input type="email" class="form-control" id="inputcc" name="inputcc" placeholder="copy@copy.com">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md">
+                    <label for="inputreceiver">Subject</label>
+                    <input type="password" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="Email address">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Check me out
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Fish</button>
+        </form>
     </div>
-
 </main>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
