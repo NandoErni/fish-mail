@@ -42,44 +42,50 @@ include "config.php";
 
 <main role="main" class="container">
     <h1 class="text-center">Settings</h1>
-    <div class="container">
-        <p>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#settingssignature" aria-expanded="false" aria-controls="settingssignature">
-                Signature
-            </button>
-        </p>
-        <div class="collapse show" id="settingssignature">
-            <div class="card card-body">
-                <form>
-                    <div class="form-row">
-                        <div class="form-group col-md">
-                            <label for="inputsignature">Set your signature here, and it will be saved for 60 days</label>
-                            <textarea class="form-control" rows="5" id="inputsignature" name="inputsignature"></textarea>
+    <div class="accordion" id="settingsaccordion">
+        <div class="card">
+            <div class="card-header" id="headingsignature">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsesignature" aria-expanded="true" aria-controls="collapsesignature">
+                        Signature
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapsesignature" class="collapse show" aria-labelledby="headingsignature" data-parent="#settingsaccordion">
+                <div class="card-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md">
+                                <label for="inputsignature">Set your signature here, and it will be saved for 60 days</label>
+                                <textarea class="form-control" rows="5" id="inputsignature" name="inputsignature"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </form>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <p class="mt-2">
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#settingspayment" aria-expanded="false"
-                    aria-controls="settingspayment">
-                Payment methods
-            </button>
-        </p>
-        <div class="collapse show" id="settingspayment">
-            <div class="card card-body">
-                <form>
-                    <div class="form-row">
-                        <div class="form-group col-md">
-                            <label for="inputpayment">Set your signature here, and it will be saved for 60 days</label>
-                            <textarea class="form-control" rows="5" id="inputpayment" name="inputpayment"></textarea>
+        <div class="card">
+            <div class="card-header" id="headingpayment">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsepayment" aria-expanded="false" aria-controls="collapsepayment">
+                        Payment method
+                    </button>
+                </h2>
+            </div>
+            <div id="collapsepayment" class="collapse" aria-labelledby="headingpayment" data-parent="#settingsaccordion">
+                <div class="card-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md">
+                                <label for="inputpayment">Set your signature here, and it will be saved for 60 days</label>
+                                <textarea class="form-control" rows="5" id="inputpayment" name="inputpayment"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </form>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
