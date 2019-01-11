@@ -32,11 +32,22 @@ if(!isset($db->query("select * from TUser where userName='nando'")->fetchArray(S
 
 
 $resUser = $db->query("select * from TUser");
+if(!isset($_COOKIE['sig'])){
+    $_COOKIE['sig'] = "";
+}
+
+if(!isset($_SESSION['userType'])){
+    $_SESSION['userType'] = "guest";
+}
+
+$_SESSION['userType'] = "guestt";
 
 
-$_SESSION['userType'] = "guest";
-
-
+//if user isn't logged in, redirect to login page
+if($_SESSION['userType'] == "guest"){
+    header("Location: signin.php"); /* Redirect browser */
+    exit();
+}
 
 
 
@@ -46,9 +57,8 @@ $_SESSION['userType'] = "guest";
 //setcookie("sig", "value", time()+(86400 * 60)); //86400 = 1 day
 function sendMail($sender, $to, $cc, $subject, $message){
 
-    if(isset($_COOKIE['sig'])){
-        $message.=$_COOKIE['sig'];
-    }
+    $message.=$_COOKIE['sig'];
+
 // Always set content-type when sending HTML email
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -67,13 +77,13 @@ function createUser($userName, $userPassword, $userType, $userNumFish=3){
     if($userType == "admin"){
         $userNumFish = "null";
     } elseif($userNumFish == "null"){
-        return "Invalid userType";
+        return false;
     }
 
     //insert
     $db->exec("insert into TUser values('".$userName."', '" . password_hash($userPassword, PASSWORD_DEFAULT) . "', '".$userType."', ".$userNumFish.")");
 
-    return "Successful!";
+    return true;
 }
 deleteUser('s');
 function deleteUser($userName){
