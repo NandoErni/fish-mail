@@ -51,6 +51,12 @@ include "config.php";
     </div>
 </main>
 
+<footer class="footer">
+    <div class="container">
+        <p class="text-center text-muted"><?php echo copyright() ?></p>
+    </div>
+</footer>
+
 <?php
 
 
