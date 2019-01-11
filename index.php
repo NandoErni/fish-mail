@@ -34,13 +34,14 @@ include "config.php";
                 <a class="nav-link" href="#">Pond <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Settings</a>
+                <a class="nav-link" href="settings.php">Settings</a>
             </li>
         </ul>
     </div>
 </nav>
 
 <main role="main" class="container">
+    <h1 class="text-center">Go fishing</h1>
     <div class="container">
         <form>
             <div class="form-row">

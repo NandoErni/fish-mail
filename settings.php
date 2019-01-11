@@ -23,7 +23,7 @@ include "config.php";
 
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">fish-mail.ch</a>
+    <a class="navbar-brand" href="index.php">fish-mail.ch</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
             aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@ include "config.php";
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Pond</a>
+                <a class="nav-link" href="index.php">Pond</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#">Settings <span class="sr-only">(current)</span></a>
@@ -48,7 +48,7 @@ include "config.php";
                 Signature
             </button>
         </p>
-        <div class="collapse" id="settingssignature">
+        <div class="collapse show" id="settingssignature">
             <div class="card card-body">
                 <form>
                     <div class="form-row">
@@ -69,7 +69,7 @@ include "config.php";
                 Payment methods
             </button>
         </p>
-        <div class="collapse" id="settingspayment">
+        <div class="collapse show" id="settingspayment">
             <div class="card card-body">
                 <form>
                     <div class="form-row">
