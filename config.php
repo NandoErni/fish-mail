@@ -122,3 +122,13 @@ function login($userName, $userPassword){
     return $loginSuccessful;
 }
 
+function copyright(){
+    $startYear = '2019';
+    $curYear = date('Y');
+    $output = "";
+    $output .= "Copyright © $startYear";
+    if($startYear != $curYear){
+        $output .= "-$curYear";
+    }
+    return $output;
+}
