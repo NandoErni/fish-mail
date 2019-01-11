@@ -35,7 +35,7 @@ include "config.php";
             header("Location: index.php"); /* Redirect browser */
             $_SESSION['userName'] = $_POST['inputusername'];
         } else {
-            echo "<h6 class=\"\">Invalid login</h6>";
+            echo "<h6 class=\"\">Username or Password incorrect</h6>";
         }
     }
 
