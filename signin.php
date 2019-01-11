@@ -33,7 +33,7 @@ include "config.php";
 
             $_SESSION['userName'] = $_POST['inputusername'];
             echo $_SESSION['userName'];
-            header("Location: index.php"); /* Redirect browser */
+            echo "<script type='text/javascript'>window.top.location='index.php';</script>";
             exit();
         } else {
             echo "<h6 class=\"\">Username or Password incorrect</h6>";
