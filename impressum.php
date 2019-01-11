@@ -40,61 +40,8 @@ include "config.php";
 </nav>
 
 <main role="main" class="container">
-    <h1 class="text-center">Go fishing</h1>
+    <h1 class="text-center">Impressum</h1>
     <div class="container">
-        <form class="needs-validation" action="thankyou.php" method="post" novalidate>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputsender">Sender</label>
-                    <input type="email" class="form-control" id="inputsender" name="inputsender" placeholder="E-Mail" required>
-                    <div class="invalid-feedback">
-                        Please enter a valid email address.
-                    </div>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputreceiver">Recipient</label>
-                    <input type="email" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="E-Mail" required>
-                    <div class="invalid-feedback">
-                        Please enter a valid email address.
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-8">
-                    <label for="inputsubject">Subject</label>
-                    <input type="text" class="form-control" id="inputsubject" name="inputsubject" placeholder="Subject" required>
-                    <div class="invalid-feedback">
-                        Please enter a subject.
-                    </div>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputcc">CC</label>
-                    <input type="email" class="form-control" id="inputcc" name="inputcc" placeholder="E-Mail">
-                    <div class="invalid-feedback">
-                        Please enter a valid email address.
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md">
-                    <label for="inputmessage">Message</label>
-                    <textarea class="form-control" rows="10" id="inputmessage" name="inputmessage" required></textarea>
-                    <div class="invalid-feedback">
-                        Please enter a message.
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="form-check custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="remember-me" name="remember-me" value="remember-me" required>
-                    <label class="custom-control-label" for="remember-me">Accept terms & conditions</label>
-                    <div class="invalid-feedback">
-                        You need to accept our terms & conditions.
-                    </div>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg">Fish</button>
-        </form>
     </div>
 </main>
 
