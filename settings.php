@@ -45,11 +45,11 @@ include "config.php";
     <div class="accordion" id="settingsaccordion">
         <div class="card">
             <div class="card-header" id="headingsignature">
-                <h2 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsesignature" aria-expanded="true" aria-controls="collapsesignature">
+                <a class="accordionlink" role="button" data-toggle="collapse" data-target="#collapsesignature" aria-expanded="true" aria-controls="collapsesignature">
+                    <h5 class="font-weight-normal mb-0 my-2">
                         Signature
-                    </button>
-                </h2>
+                    </h5>
+                </a>
             </div>
 
             <div id="collapsesignature" class="collapse show" aria-labelledby="headingsignature" data-parent="#settingsaccordion">
@@ -68,11 +68,11 @@ include "config.php";
         </div>
         <div class="card">
             <div class="card-header" id="headingpayment">
-                <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsepayment" aria-expanded="false" aria-controls="collapsepayment">
+                <a class="accordionlink" role="button" data-toggle="collapse" data-target="#collapsepayment" aria-expanded="false" aria-controls="collapsepayment">
+                    <h5 class="font-weight-normal mb-0 my-2">
                         Payment method
-                    </button>
-                </h2>
+                    </h5>
+                </a>
             </div>
             <div id="collapsepayment" class="collapse" aria-labelledby="headingpayment" data-parent="#settingsaccordion">
                 <div class="card-body">
