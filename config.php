@@ -27,7 +27,35 @@ if(!isset($resDefaultAdmins->fetchArray(SQLITE3_ASSOC)['userName'])) {
 $resUser = $db->query("select * from TUser");
 
 
-$_SESSION['user'] = "guest";
+$_SESSION['userType'] = "guest";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function login($userName, $userPassword){
+    global $resUser;
+    $loginSuccessful = false;
+
+    while ($dsatz = $resUser->fetchArray(SQLITE3_ASSOC)) {
+        if($dsatz['userName'] == $userName && password_verify($userPassword, $dsatz['userPassword'])){
+            $_SESSION['userType'] = $dsatz['userType'];
+            $loginSuccessful = true;
+        }
+    }
+
+    return $loginSuccessful;
+}
 
 //setcookie("sig", "value", time()+(86400 * 60)); //86400 = 1 day
 function sendMail($sender, $to, $cc, $subject, $message){
