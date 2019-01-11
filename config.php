@@ -32,8 +32,9 @@ if(!isset($db->query("select * from TUser where userName='nando'")->fetchArray(S
 
 
 $resUser = $db->query("select * from TUser");
-
-
+if(!isset($_COOKIE['sig'])){
+    $_COOKIE['sig'] = "";
+}
 $_SESSION['userType'] = "guest";
 
 
@@ -46,9 +47,8 @@ $_SESSION['userType'] = "guest";
 //setcookie("sig", "value", time()+(86400 * 60)); //86400 = 1 day
 function sendMail($sender, $to, $cc, $subject, $message){
 
-    if(isset($_COOKIE['sig'])){
-        $message.=$_COOKIE['sig'];
-    }
+    $message.=$_COOKIE['sig'];
+
 // Always set content-type when sending HTML email
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
