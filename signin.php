@@ -21,7 +21,7 @@
 
 </head>
 <body class="text-center">
-<form class="form-signin">
+<form class="form-signin" action="signin.php" method="post">
     <img class="mb-4" src="img/fishing.png" alt="" width="150" height="150">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label for="inputemail" class="sr-only">Email address</label>
