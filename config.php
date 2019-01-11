@@ -122,6 +122,10 @@ function login($userName, $userPassword){
     return $loginSuccessful;
 }
 
+function logout(){
+    $_SESSION['userName'] = "guest";
+}
+
 function copyright(){
     $startYear = '2019';
     $curYear = date('Y');
