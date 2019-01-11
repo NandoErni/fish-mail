@@ -36,15 +36,15 @@ if(!isset($_COOKIE['sig'])){
     $_COOKIE['sig'] = "";
 }
 
-if(!isset($_SESSION['userType'])){
-    $_SESSION['userType'] = "guest";
+if(!isset($_SESSION['userName'])){
+    $_SESSION['userName'] = "guest";
 }
 
-$_SESSION['userType'] = "guestt";
+$_SESSION['userName'] = "guestt";
 
 
 //if user isn't logged in, redirect to login page
-if($_SESSION['userType'] == "guest"){
+if($_SESSION['userName'] == "guest"){
     header("Location: signin.php"); /* Redirect browser */
     exit();
 }
@@ -114,7 +114,7 @@ function login($userName, $userPassword){
 
     while ($dsatz = $resUser->fetchArray(SQLITE3_ASSOC)) {
         if($dsatz['userName'] == $userName && password_verify($userPassword, $dsatz['userPassword'])){
-            $_SESSION['userType'] = $dsatz['userType'];
+            $_SESSION['userName'] = $dsatz['userName'];
             $loginSuccessful = true;
         }
     }
