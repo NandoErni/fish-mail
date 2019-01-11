@@ -43,21 +43,21 @@ include "config.php";
 <main role="main" class="container">
     <h1 class="text-center">Go fishing</h1>
     <div class="container">
-        <form>
+        <form action="thankyou.php" method="post">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputsender">Sender</label>
-                    <input type="email" class="form-control" id="inputsender" name="inputsender" placeholder="E-Mail">
+                    <input type="email" class="form-control" id="inputsender" name="inputsender" placeholder="E-Mail" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputreceiver">Recipient</label>
-                    <input type="password" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="E-Mail">
+                    <input type="password" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="E-Mail" required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-8">
                     <label for="inputreceiver">Subject</label>
-                    <input type="password" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="Subject">
+                    <input type="password" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="Subject" required>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputcc">CC</label>
@@ -67,7 +67,7 @@ include "config.php";
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="inputmessage">Message</label>
-                    <textarea class="form-control" rows="10" id="inputmessage" name="inputmessage"></textarea>
+                    <textarea class="form-control" rows="10" id="inputmessage" name="inputmessage" required></textarea>
                 </div>
             </div>
             <div class="form-group">
