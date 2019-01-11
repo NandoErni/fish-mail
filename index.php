@@ -53,7 +53,7 @@ include "config.php";
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputreceiver">Recipient</label>
-                    <input type="email" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="E-Mail" required>
+                    <input type="email" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="E-Mail" multiple required>
                     <div class="invalid-feedback">
                         Please enter a valid email address.
                     </div>
