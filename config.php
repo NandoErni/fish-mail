@@ -57,7 +57,7 @@ if($_SESSION['userName'] == "guest"){
 //setcookie("sig", "value", time()+(86400 * 60)); //86400 = 1 day
 function sendMail($sender, $to, $cc, $subject, $message){
 
-    $message.=$_COOKIE['sig'];
+    $message.="<br><br><br>".$_COOKIE['sig'];
 
 // Always set content-type when sending HTML email
     $headers = "MIME-Version: 1.0" . "\r\n";
@@ -120,6 +120,10 @@ function login($userName, $userPassword){
     }
 
     return $loginSuccessful;
+}
+
+function logout(){
+    $_SESSION['userName'] = "guest";
 }
 
 function copyright(){
