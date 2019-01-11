@@ -41,7 +41,42 @@ include "config.php";
 
 <main role="main" class="container">
     <h1 class="text-center">Impressum</h1>
-    <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-center">Kontaktadresse</h3>
+            <br>
+            <p class="text-center">IMS Frauenfeld <br>
+                Ringstrasse 10 <br>
+                CH-8501 Frauenfeld</p>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center">Informationen</h3>
+            <br>
+            <p class="text-center">Telefon: +41 79 123 45 67 <br>
+                E-Mail: yeet@yoop.mail</p>
+            <br>
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="text">
+                <h3 class="text-center">Der Zweck der Seite</h3>
+                <p class="text-justify">Mit den Daten von <a href="https://ogd.tg.ch">Open Government Data Thurgau</a> werden wir eine
+                    Web-Appliaktion entwickeln, die die Luftschadstoffbelastung im Kanton Thurgau ersichlich macht.
+                    Der Benutzer kann zwischen den Jahren 2005, 2010, 2015, 2020, 2030 und zwischen Stickstoffdioxid und
+                    Feinstaub auswählen, welches Jahr und welcher Schadstoff auf der Karte erscheinen soll.
+
+                    Unsere Aufgabe ist, die Web-Applikation möglichst gut umzusetzen und diese ergonomisch wie
+                    möglich den Interessenten freizugeben.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center">Unser Team</h3>
+            <br>
+            <p class="text-center">Nando Erni<br>
+                Pascal Leone</p>
+        </div>
     </div>
 </main>
 
