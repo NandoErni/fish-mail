@@ -43,37 +43,55 @@ include "config.php";
 <main role="main" class="container">
     <h1 class="text-center">Go fishing</h1>
     <div class="container">
-        <form action="thankyou.php" method="post">
+        <form class="needs-validation" action="thankyou.php" method="post" novalidate>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputsender">Sender</label>
                     <input type="email" class="form-control" id="inputsender" name="inputsender" placeholder="E-Mail" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid email address.
+                    </div>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputreceiver">Recipient</label>
-                    <input type="password" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="E-Mail" required>
+                    <input type="email" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="E-Mail" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid email address.
+                    </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-8">
-                    <label for="inputreceiver">Subject</label>
-                    <input type="password" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="Subject" required>
+                    <label for="inputsubject">Subject</label>
+                    <input type="text" class="form-control" id="inputsubject" name="inputsubject" placeholder="Subject" required>
+                    <div class="invalid-feedback">
+                        Please enter a subject.
+                    </div>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputcc">CC</label>
                     <input type="email" class="form-control" id="inputcc" name="inputcc" placeholder="E-Mail">
+                    <div class="invalid-feedback">
+                        Please enter a valid email address.
+                    </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="inputmessage">Message</label>
                     <textarea class="form-control" rows="10" id="inputmessage" name="inputmessage" required></textarea>
+                    <div class="invalid-feedback">
+                        Please enter a message.
+                    </div>
                 </div>
             </div>
             <div class="form-group">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="remember-me" name="remember-me" value="remember-me">
-                    <label class="custom-control-label" for="remember-me">Remember me</label>
+                <div class="form-check custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="remember-me" name="remember-me" value="remember-me" required>
+                    <label class="custom-control-label" for="remember-me">Accept terms & conditions</label>
+                    <div class="invalid-feedback">
+                        You need to accept our terms & conditions.
+                    </div>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary btn-lg">Fish</button>
@@ -81,6 +99,7 @@ include "config.php";
     </div>
 </main>
 
+<script defer src="js/validate.js"></script>
 <script src="js/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
