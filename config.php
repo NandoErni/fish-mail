@@ -67,13 +67,13 @@ function createUser($userName, $userPassword, $userType, $userNumFish=3){
     if($userType == "admin"){
         $userNumFish = "null";
     } elseif($userNumFish == "null"){
-        return "Invalid userType";
+        return false;
     }
 
     //insert
     $db->exec("insert into TUser values('".$userName."', '" . password_hash($userPassword, PASSWORD_DEFAULT) . "', '".$userType."', ".$userNumFish.")");
 
-    return "Successful!";
+    return true;
 }
 deleteUser('s');
 function deleteUser($userName){
