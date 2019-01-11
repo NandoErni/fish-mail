@@ -69,7 +69,7 @@ include "config.php";
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputcc">CC</label>
-                    <input type="email" class="form-control" id="inputcc" name="inputcc" placeholder="E-Mail">
+                    <input type="email" class="form-control" id="inputcc" name="inputcc" placeholder="E-Mail" multiple>
                     <div class="invalid-feedback">
                         Please enter a valid email address.
                     </div>
