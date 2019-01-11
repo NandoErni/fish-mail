@@ -35,9 +35,19 @@ $resUser = $db->query("select * from TUser");
 if(!isset($_COOKIE['sig'])){
     $_COOKIE['sig'] = "";
 }
-$_SESSION['userType'] = "guest";
+
+if(!isset($_SESSION['userType'])){
+    $_SESSION['userType'] = "guest";
+}
+
+$_SESSION['userType'] = "guestt";
 
 
+//if user isn't logged in, redirect to login page
+if($_SESSION['userType'] == "guest"){
+    header("Location: signin.php"); /* Redirect browser */
+    exit();
+}
 
 
 
