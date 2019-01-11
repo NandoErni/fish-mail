@@ -41,6 +41,7 @@ include "config.php";
 </nav>
 
 <main role="main" class="container">
+    <h1 class="text-center">Go fishing</h1>
     <div class="container">
         <form>
             <div class="form-row">
