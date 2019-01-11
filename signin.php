@@ -27,8 +27,20 @@ include "config.php";
 <form class="form-signin" action="signin.php" method="post">
     <img class="mb-4" src="img/fishing.png" alt="" width="150" height="150">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputemail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" name="inputemail" class="form-control" placeholder="E-Mail"
+
+
+    <?php
+    if(isset($_POST['loginSubmit'])){
+        if(login($_POST['inputusername'], $_POST['inputpassword'])){
+
+        }
+    }
+
+    ?>
+
+    <h6 class="">Invalid login</h6>
+    <label for="inputusername" class="sr-only">Username</label>
+    <input type="text" id="inputusername" name="inputusername" class="form-control" placeholder="Username"
            required autofocus>
     <label for="inputpassword" class="sr-only">Password</label>
     <input type="password" id="inputpassword" name="inputpassword" class="form-control" placeholder="Password" required>
@@ -36,7 +48,7 @@ include "config.php";
         <input type="checkbox" class="custom-control-input" id="remember-me" name="remember-me" value="remember-me">
         <label class="custom-control-label" for="remember-me">Remember me</label>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" name="loginSubmit">Sign in</button>
     <p class="mt-5 mb-3 text-muted"><?php echo copyright() ?></p>
 </form>
 </body>
