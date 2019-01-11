@@ -22,14 +22,14 @@ include "config.php";
 
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top justify-content-center">
+    <a class="navbar-brand" href="#">fish-mail.ch</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
             aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <!--<div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -37,23 +37,12 @@ include "config.php";
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-    </div>
+    </div>-->
 </nav>
 
 <main role="main" class="container">
@@ -62,51 +51,42 @@ include "config.php";
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputsender">Sender</label>
-                    <input type="email" class="form-control" id="inputsender" name="inputsender" placeholder="sender@sender.com">
+                    <input type="email" class="form-control" id="inputsender" name="inputsender" placeholder="E-Mail">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputreceiver">Recipient</label>
-                    <input type="password" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="recipient@recipient.com">
+                    <input type="password" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="E-Mail">
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md">
-                    <label for="inputcc">CC</label>
-                    <input type="email" class="form-control" id="inputcc" name="inputcc" placeholder="copy@copy.com">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md">
+                <div class="form-group col-md-8">
                     <label for="inputreceiver">Subject</label>
-                    <input type="password" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="Email address">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputCity">City</label>
-                    <input type="text" class="form-control" id="inputCity">
+                    <input type="password" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="Subject">
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="inputState">State</label>
-                    <select id="inputState" class="form-control">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                    </select>
+                    <label for="inputcc">CC</label>
+                    <input type="email" class="form-control" id="inputcc" name="inputcc" placeholder="E-Mail">
                 </div>
-                <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md">
+                    <label for="inputmessage">Message</label>
+                    <textarea class="form-control" rows="10" id="inputmessage" name="inputmessage"></textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md">
+                    <label for="inputsignature">Signature</label>
+                    <textarea class="form-control" rows="5" id="inputsignature" name="inputsignature"></textarea>
                 </div>
             </div>
             <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Check me out
-                    </label>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="remember-me" name="remember-me" value="remember-me">
+                    <label class="custom-control-label" for="remember-me">Remember me</label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Fish</button>
+            <button type="submit" class="btn btn-primary btn-lg">Fish</button>
         </form>
     </div>
 </main>
