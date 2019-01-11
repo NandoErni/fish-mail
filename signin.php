@@ -29,8 +29,10 @@ include "config.php";
     <?php
     if(isset($_POST['loginSubmit'])){
         if(login($_POST['inputusername'], $_POST['inputpassword'])){
-            header("Location: index.php"); /* Redirect browser */
+
             $_SESSION['userName'] = $_POST['inputusername'];
+            header("Location: index.php"); /* Redirect browser */
+            exit();
         } else {
             echo "<h6 class=\"\">Username or Password incorrect</h6>";
         }
