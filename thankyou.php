@@ -37,7 +37,7 @@ include "config.php";
                 <a class="nav-link" href="settings.php">Settings</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form action="thankyou.php" method="post" class="form-inline my-2 my-lg-0">
             <button class="btn btn-danger my-2 my-sm-0" name="logoutSubmit" type="submit">Logout</button>
         </form>
     </div>
