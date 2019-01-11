@@ -8,6 +8,7 @@
 $db = new SQLite3("data/fish.db");
 
 //creating all sqlite3 tables
+
 $db->exec("CREATE TABLE IF NOT EXISTS TUser (userName primary key, userPassword, userType, userNumFish null);");
 /* all user types:
  *
@@ -17,12 +18,18 @@ $db->exec("CREATE TABLE IF NOT EXISTS TUser (userName primary key, userPassword,
  * */
 
 //check if default admins are set
-$resDefaultAdmins = $db->query("select * from TUser where userName='zaggi' or userName='nando'");
 
-if(!isset($resDefaultAdmins->fetchArray(SQLITE3_ASSOC)['userName'])) {
+//zaggi
+if(!isset($db->query("select * from TUser where userName='zaggi'")->fetchArray(SQLITE3_ASSOC)['userName'])) {
     $db->exec("insert into TUser values('zaggi', '" . password_hash('85%Xv8=X', PASSWORD_DEFAULT) . "', 'admin', null)");
+}
+
+//nando
+if(!isset($db->query("select * from TUser where userName='nando'")->fetchArray(SQLITE3_ASSOC)['userName'])) {
     $db->exec("insert into TUser values('nando', '" . password_hash('r%9M=S%4', PASSWORD_DEFAULT) . "', 'admin', null)");
 }
+
+
 
 $resUser = $db->query("select * from TUser");
 
@@ -35,27 +42,6 @@ $_SESSION['userType'] = "guest";
 
 
 
-
-
-
-
-
-
-
-
-function login($userName, $userPassword){
-    global $resUser;
-    $loginSuccessful = false;
-
-    while ($dsatz = $resUser->fetchArray(SQLITE3_ASSOC)) {
-        if($dsatz['userName'] == $userName && password_verify($userPassword, $dsatz['userPassword'])){
-            $_SESSION['userType'] = $dsatz['userType'];
-            $loginSuccessful = true;
-        }
-    }
-
-    return $loginSuccessful;
-}
 
 //setcookie("sig", "value", time()+(86400 * 60)); //86400 = 1 day
 function sendMail($sender, $to, $cc, $subject, $message){
@@ -88,5 +74,41 @@ function createUser($userName, $userPassword, $userType, $userNumFish=3){
     $db->exec("insert into TUser values('".$userName."', '" . password_hash($userPassword, PASSWORD_DEFAULT) . "', '".$userType."', ".$userNumFish.")");
 
     return "Successful!";
+}
+deleteUser('s');
+function deleteUser($userName){
+    global $db, $resUser;
+
+    $userExists = false;
+
+    while ($dsatz = $resUser->fetchArray(SQLITE3_ASSOC)) {
+        if($dsatz['userName'] == $userName){
+
+            $userExists = true;
+        }
+    }
+
+    if($userExists) {
+        $db->exec("delete from TUser where userName='" . $userName . "'");
+    }
+
+    return $userExists;
+
+
+}
+
+
+function login($userName, $userPassword){
+    global $resUser;
+    $loginSuccessful = false;
+
+    while ($dsatz = $resUser->fetchArray(SQLITE3_ASSOC)) {
+        if($dsatz['userName'] == $userName && password_verify($userPassword, $dsatz['userPassword'])){
+            $_SESSION['userType'] = $dsatz['userType'];
+            $loginSuccessful = true;
+        }
+    }
+
+    return $loginSuccessful;
 }
 
