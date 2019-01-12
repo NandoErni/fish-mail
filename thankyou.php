@@ -67,7 +67,7 @@ if(isset($_POST['fishSubmit'])){
     }
 
     //$sender, $to, $cc, $subject, $message
-    sendMail($_POST['inputsender'],$_POST['inputreceiver'],$_POST['inputcc'],$_POST['inputsubject'],$_POST['inputmessage']);
+    sendMail($_POST['inputsender'],$_POST['inputname'],$_POST['inputreceiver'],$_POST['inputcc'],$_POST['inputsubject'],$_POST['inputmessage']);
 }
 elseif(isset($_POST['logoutSubmit'])){
     logout();
