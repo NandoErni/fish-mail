@@ -54,7 +54,7 @@ if($_SESSION['userName'] == "guest" && basename($_SERVER['PHP_SELF']) != "signin
 
 
 //setcookie("sig", "value", time()+(86400 * 60)); //86400 = 1 day
-function sendMail($sender, $to, $cc, $subject, $message){
+function sendMail($sender, $name, $to, $cc, $subject, $message){
 
     $message.="<br><br><br>".$_COOKIE['sig'];
 
@@ -63,7 +63,7 @@ function sendMail($sender, $to, $cc, $subject, $message){
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
-    $headers .= "From: <$sender>" . "\r\n";
+    $headers .= "From: $name <$sender>" . "\r\n";
     $headers .= "Cc: $cc" . "\r\n";
 
     mail($to,$subject,$message,$headers);

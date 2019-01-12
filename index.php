@@ -63,6 +63,15 @@ include "config.php";
                 </div>
             </div>
             <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputsender">Sender name</label>
+                    <input type="email" class="form-control" id="inputname" name="inputname" placeholder="Name" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid name.
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
                 <div class="form-group col-md-8">
                     <label for="inputsubject">Subject</label>
                     <input type="text" class="form-control" id="inputsubject" name="inputsubject" placeholder="Subject" required>
