@@ -65,7 +65,7 @@ include "config.php";
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="inputsender">Sender name</label>
-                    <input type="email" class="form-control" id="inputname" name="inputname" placeholder="Name" required>
+                    <input type="text" class="form-control" id="inputname" name="inputname" placeholder="Name" required>
                     <div class="invalid-feedback">
                         Please enter a valid name.
                     </div>
