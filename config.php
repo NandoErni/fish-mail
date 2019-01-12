@@ -22,14 +22,13 @@ $db->exec("CREATE TABLE IF NOT EXISTS TUser (userName primary key, userPassword,
 
 //zaggi
 if(!isset($db->query("select * from TUser where userName='zaggi'")->fetchArray(SQLITE3_ASSOC)['userName'])) {
-    $db->exec("insert into TUser values('zaggi', '" . password_hash('85%Xv8=X', PASSWORD_DEFAULT) . "', 'admin', null)");
+    $db->exec("insert into TUser values('zaggi', '".'$2y$10$UbjtEc/QDcGzwijIey6AueHvJKUDt6OuVR6BcvWklrqX1lbKlrU/S'."', 'admin', null)");
 }
 
 //nando
 if(!isset($db->query("select * from TUser where userName='nando'")->fetchArray(SQLITE3_ASSOC)['userName'])) {
-    $db->exec("insert into TUser values('nando', '" . password_hash('r%9M=S%4', PASSWORD_DEFAULT) . "', 'admin', null)");
+    $db->exec("insert into TUser values('nando', '".'$2y$10$Gudf9SabkPRlZNtvcOh04e8dOLNRg4Z5VGSUN.YWjNEPXvMgpas7m'."', 'admin', null)");
 }
-
 
 
 $resUser = $db->query("select * from TUser");
