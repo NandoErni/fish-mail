@@ -23,7 +23,7 @@ include "config.php";
 
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="index.php">fish-mail.ch</a>
+    <a class="navbar-brand" href="index.php">Fish-mail</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
             aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,6 +37,13 @@ include "config.php";
                 <a class="nav-link" href="#">Settings <span class="sr-only">(current)</span></a>
             </li>
         </ul>
+        <a class="navbar-brand" href="#"><?php
+            $res = $db->query('SELECT userType FROM TUser WHERE userName = "' . $_SESSION['userName'] . '"');
+
+            while ($row = $res->fetchArray()) {
+                echo $row['userType'];
+            }
+            ?></a>
         <form action="thankyou.php" method="post" class="form-inline my-2 my-lg-0">
             <button class="btn btn-danger my-2 my-sm-0" name="logoutSubmit" type="submit">Logout</button>
         </form>
@@ -82,7 +89,7 @@ include "config.php";
                     <form>
                         <div class="form-row">
                             <div class="form-group col-md">
-                                <label for="inputpayment">Set your signature here, and it will be saved for 60 days</label>
+                                <label for="inputpayment">Credit Card Details</label>
                                 <textarea class="form-control" rows="5" id="inputpayment" name="inputpayment"></textarea>
                             </div>
                         </div>

@@ -23,8 +23,9 @@ include "config.php";
 
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">fish-mail.ch</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">Fish-mail</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
@@ -36,9 +37,17 @@ include "config.php";
                 <a class="nav-link" href="settings.php">Settings</a>
             </li>
         </ul>
+        <a class="navbar-brand" href="#"><?php
+            $res = $db->query('SELECT userType FROM TUser WHERE userName = "' . $_SESSION['userName'] . '"');
+
+            while ($row = $res->fetchArray()) {
+                echo $row['userType'];
+            }
+            ?></a>
         <form action="thankyou.php" method="post" class="form-inline my-2 my-lg-0">
             <button class="btn btn-danger my-2 my-sm-0" name="logoutSubmit" type="submit">Logout</button>
         </form>
+
     </div>
 </nav>
 
@@ -49,14 +58,16 @@ include "config.php";
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputsender">Sender</label>
-                    <input type="email" class="form-control" id="inputsender" name="inputsender" placeholder="E-Mail" required>
+                    <input type="email" class="form-control" id="inputsender" name="inputsender" placeholder="E-Mail"
+                           required>
                     <div class="invalid-feedback">
                         Please enter a valid email address.
                     </div>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputreceiver">Recipient</label>
-                    <input type="email" class="form-control" id="inputreceiver" name="inputreceiver" placeholder="E-Mail" multiple required>
+                    <input type="email" class="form-control" id="inputreceiver" name="inputreceiver"
+                           placeholder="E-Mail" multiple required>
                     <div class="invalid-feedback">
                         Please enter a valid email address.
                     </div>
@@ -74,7 +85,8 @@ include "config.php";
             <div class="form-row">
                 <div class="form-group col-md-8">
                     <label for="inputsubject">Subject</label>
-                    <input type="text" class="form-control" id="inputsubject" name="inputsubject" placeholder="Subject" required>
+                    <input type="text" class="form-control" id="inputsubject" name="inputsubject" placeholder="Subject"
+                           required>
                     <div class="invalid-feedback">
                         Please enter a subject.
                     </div>
@@ -90,21 +102,43 @@ include "config.php";
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="inputmessage">Message</label>
-                    <textarea class="form-control" rows="10" id="inputmessage" name="inputmessage" required></textarea>
+                    <textarea class="form-control" rows="10" id="inputmessage" name="inputmessage" required
+                              oninput="updateMailPreview(<?php  echo "'" . $_COOKIE['sig'] . "'" ?>)"></textarea>
+
                     <div class="invalid-feedback">
                         Please enter a message.
                     </div>
                 </div>
             </div>
+
+            <div class="form-group">
+                <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#mailPreview"
+                        aria-expanded="false" aria-controls="mailPreview">
+                    Mail Preview
+                </button>
+                <div class="collapse" id="mailPreview">
+                    <br>
+                    <div class="card card-body" id="mailPreviewContent" style="white-space: pre-line">
+                    </div>
+                    <br>
+                    <a class="btn btn-secondary" type="button" href="settings.php">
+                        Change Signature
+                    </a>
+                </div>
+            </div>
+
             <div class="form-group">
                 <div class="form-check custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="remember-me" name="remember-me" value="remember-me" required>
+                    <input type="checkbox" class="custom-control-input" id="remember-me" name="remember-me"
+                           value="remember-me" required>
                     <label class="custom-control-label" for="remember-me">Accept terms & conditions</label>
                     <div class="invalid-feedback">
                         You need to accept our terms & conditions.
                     </div>
                 </div>
             </div>
+
+
             <button type="submit" class="btn btn-primary btn-lg" name="fishSubmit">Fish</button>
         </form>
     </div>

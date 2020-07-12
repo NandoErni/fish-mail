@@ -22,12 +22,12 @@ include "config.php";
 </head>
 <body class="text-center">
 <form class="form-signin needs-validation" action="signin.php" method="post" novalidate>
+    <h1 class="h1 mb-3 font-weight-normal">Fish-mail</h1>
     <img class="mb-4" src="img/fishing.png" alt="" width="150" height="150">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
 
     <?php
-
     if(isset($_POST['loginSubmit'])){
         if(login($_POST['inputusername'], $_POST['inputpassword'])){
 
@@ -39,7 +39,6 @@ include "config.php";
             echo "<h6 class=\"\">Username or Password incorrect</h6>";
         }
     }
-
     ?>
 
 

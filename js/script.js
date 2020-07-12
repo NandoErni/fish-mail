@@ -7,9 +7,6 @@ if (window.location.href.match('settings.php') != null) {
     document.getElementById("inputsignature").innerHTML = getCookie('sig');
 }
 
-
-
-
 //cookie functions
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -32,4 +29,11 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+
+function updateMailPreview(signature) {
+    if (signature === "undefined" || signature == null) {
+        signature = "";
+    }
+    document.getElementById("mailPreviewContent").innerHTML = "<p>" + document.getElementById("inputmessage").value + "</p>" + signature;
 }

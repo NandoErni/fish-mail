@@ -18,18 +18,6 @@ $db->exec("CREATE TABLE IF NOT EXISTS TUser (userName primary key, userPassword,
  *
  * */
 
-//check if default admins are set
-
-//zaggi
-if(!isset($db->query("select * from TUser where userName='zaggi'")->fetchArray(SQLITE3_ASSOC)['userName'])) {
-    $db->exec("insert into TUser values('zaggi', '".'$2y$10$UbjtEc/QDcGzwijIey6AueHvJKUDt6OuVR6BcvWklrqX1lbKlrU/S'."', 'admin', null)");
-}
-
-//nando
-if(!isset($db->query("select * from TUser where userName='nando'")->fetchArray(SQLITE3_ASSOC)['userName'])) {
-    $db->exec("insert into TUser values('nando', '".'$2y$10$Gudf9SabkPRlZNtvcOh04e8dOLNRg4Z5VGSUN.YWjNEPXvMgpas7m'."', 'admin', null)");
-}
-
 
 $resUser = $db->query("select * from TUser");
 if(!isset($_COOKIE['sig'])){
@@ -50,12 +38,10 @@ if($_SESSION['userName'] == "guest" && basename($_SERVER['PHP_SELF']) != "signin
 
 
 
-
-
-
 //setcookie("sig", "value", time()+(86400 * 60)); //86400 = 1 day
 function sendMail($sender, $name, $to, $cc, $subject, $message){
 
+    $message = nl2br($message);
     $message.="<br><br><br>".$_COOKIE['sig'];
 
 // Always set content-type when sending HTML email
